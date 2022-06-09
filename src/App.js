@@ -9,11 +9,13 @@ import Login from './component/Pages/Login/Login'
 import ServiceDetails from './component/Pages/ServiceDetails/ServiceDetails';
 import Register from './component/Pages/Login/Register/Register';
 import NotFond from './component/NotFond/NotFond';
+import Checkout from './component/Pages/Checkout/Checkout/Checkout';
+import RequireAuth from './component/Pages/Login/RequireAuth/RequireAuth';
 
 function App() {
   return (
     <div>
-<Header></Header>
+      <Header></Header>
 
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
@@ -22,6 +24,13 @@ function App() {
         <Route path='/service/:serviceId' element={<ServiceDetails></ServiceDetails>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/checkout' element={
+          <RequireAuth>
+            <Checkout></Checkout>
+          </RequireAuth>}>
+
+        </Route>
+
         <Route path='*' element={<NotFond></NotFond>}></Route>
       </Routes>
       <Footer></Footer>
