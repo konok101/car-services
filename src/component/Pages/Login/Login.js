@@ -78,7 +78,7 @@ const Login = () => {
         {elementError}
       </Form>
       <p>New to Genius car <Link to="/register" className='text-danger text-decoration-none pe-auto mb-5' onClick={navigateRegister}>Please Register</Link></p>
-      <p>Forget password? <Link to="/register" className='text-danger text-decoration-none pe-auto mb-5' onClick={resetPassword}>Reset Password</Link></p>
+      <p>Forget password? <button   className='text-danger text-decoration-none pe-auto mb-5' onClick={resetPassword}>Reset Password</button></p>
       <SocialLogin></SocialLogin>
     </div>
   );
